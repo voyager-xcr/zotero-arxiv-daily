@@ -1,13 +1,5 @@
-import pytest
-import hydra
 from zotero_arxiv_daily.retriever.arxiv_retriever import ArxivRetriever
 import feedparser
-
-@pytest.fixture
-def config():
-    with hydra.initialize(config_path="../../config",version_base=None):
-        config = hydra.compose(config_name="default")
-    return config
 
 
 def test_arxiv_retriever(config, monkeypatch):
