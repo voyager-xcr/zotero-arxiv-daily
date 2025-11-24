@@ -1,6 +1,6 @@
 from zotero_arxiv_daily.retriever.arxiv_retriever import ArxivRetriever
 import feedparser
-
+import pickle
 
 def test_arxiv_retriever(config, monkeypatch):
 
