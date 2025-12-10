@@ -1,0 +1,34 @@
+zotero:
+  user_id: ${oc.env:ZOTERO_ID}
+  api_key: ${oc.env:ZOTERO_KEY}
+  include_path: null
+
+email:
+  sender: ${oc.env:SENDER}
+  receiver: ${oc.env:RECEIVER}
+  smtp_server: smtp.qq.com
+  smtp_port: 465
+  sender_password: ${oc.env:SENDER_PASSWORD}
+
+llm:
+  api:
+    key: ${oc.env:OPENAI_API_KEY}
+    base_url: ${oc.env:OPENAI_API_BASE}
+  generation_kwargs:
+    model: gpt-4o-mini
+
+reranker:
+  local:
+    model: Qwen/Qwen3-Embedding-0.6B
+  api:
+    key: ${oc.env:OPENAI_API_KEY}
+    base_url: ${oc.env:OPENAI_API_BASE}
+    model: text-embedding-3-large
+
+source:
+  arxiv:
+    query: cs.AI+cs.CV+cs.LG+cs.CL
+
+executor:
+  debug: ${oc.env:DEBUG,false}
+  source: ['arxiv']
