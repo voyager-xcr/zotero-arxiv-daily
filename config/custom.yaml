@@ -30,5 +30,5 @@ source:
     query: cs.AI+cs.CV+cs.LG+cs.CL
 
 executor:
-  debug: ${oc.env:DEBUG,false}
+  debug: ${oc.env:DEBUG}
   source: ['arxiv']
