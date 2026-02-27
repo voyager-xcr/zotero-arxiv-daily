@@ -7,7 +7,7 @@ def test_arxiv_retriever(config, monkeypatch):
     parsed_result = feedparser.parse("tests/retriever/arxiv_rss_example.xml")
     raw_parser = feedparser.parse
     def mock_feedparser_parse(url):
-        if url == f"https://rss.arxiv.org/atom/{config.source.arxiv.query}":
+        if url == f"https://rss.arxiv.org/atom/{'+'.join(config.source.arxiv.category)}":
             return parsed_result
         return raw_parser(url)
     monkeypatch.setattr(feedparser, "parse", mock_feedparser_parse)
